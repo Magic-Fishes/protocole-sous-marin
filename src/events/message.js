@@ -41,7 +41,16 @@ module.exports = {
                             .setStyle(1)
                             .setEmoji("📩")
                             .setDisabled(botActions.includes("[DISABLE_VERIFY]"))
-                    )]
+                    )
+                    .addComponents(
+                        new MessageButton()
+                            .setCustomId("without_picture")
+                            .setLabel("Valider le feedback sans l'image")
+                            .setStyle(1)
+                            .setEmoji("📩")
+                            .setDisabled(botActions.includes("[DISABLE_VERIFY]"))
+                    )
+                ]
                 newMessage.components = buttons
             }
             message.delete()
