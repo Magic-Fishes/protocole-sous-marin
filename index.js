@@ -1,9 +1,11 @@
+console.log("BOT is awaking")
 const Discord = require("discord.js");
 const config = require("./config.json");
 
 const Client = new Discord.Client({ partials: ["CHANNEL"], intents: 98303 });
 
 // Error handling 
+
 
 process.on("exit", code => {console.log("Le processus s'est arrêté avec le code : " + code) });
 process.on("uncaughtException", (err, origin) => { console.log("UNCAUGHT_EXCEPTION : " + err, "Origine : " + origin)});
