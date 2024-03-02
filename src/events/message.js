@@ -1,5 +1,5 @@
-const config = require("../../config.json")
-const { MessageActionRow, MessageButton } = require("discord.js")
+const config = require("../../config.json");
+const { ActionRowBuilder, ButtonBuilder } = require("discord.js");
 
 
 module.exports = {
@@ -33,9 +33,9 @@ module.exports = {
              * botActions:[VERIFY],[DISABLE_VERIFY]
              */
             if (botActions.includes("[VERIFY]")) {
-                const buttons = [new MessageActionRow()
+                const buttons = [new ActionRowBuilder()
                     .addComponents(
-                        new MessageButton()
+                        new ButtonBuilder()
                             .setCustomId("feedback_agree")
                             .setLabel("Valider le feedback")
                             .setStyle(1)
@@ -43,7 +43,7 @@ module.exports = {
                             .setDisabled(botActions.includes("[DISABLE_VERIFY]"))
                     )
                     .addComponents(
-                        new MessageButton()
+                        new ButtonBuilder()
                             .setCustomId("without_picture")
                             .setLabel("Valider le feedback sans l'image")
                             .setStyle(1)
